@@ -11,5 +11,10 @@ div#inner {
 	right: 0;
 	left: 0;
 	top:50%; 
+	height:10em;
+	margin-top:-5em;
 	text-align: center;
+}
+span#countdown {
+	font-size: 10em;
 }
