@@ -1,10 +1,10 @@
 function decrementIt() {
-	var currentTime = jQuery.trim($('#countdowner').html())
+	var currentTime = jQuery.trim($('#inner').html())
 	if (currentTime == 0 ) {
 		intervalToggle();
 		currentTime = 10;
 	} else {
 		currentTime--;
 	}
-	$('#countdowner').html(currentTime);
+	$('#inner').html(currentTime);
 }

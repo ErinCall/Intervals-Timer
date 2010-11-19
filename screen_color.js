@@ -1,5 +1,5 @@
 function setBodyColor(color) {
-	document.body.bgColor = color;
+	$('#outer').css('background-color', color);
 }
 
 var start = 1;
