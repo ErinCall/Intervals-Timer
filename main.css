@@ -1,25 +1,15 @@
-html {
-	margin: 0;
-	padding: 0;
-	height: 84%;
-}
-body {
-	margin: 4%;
-	padding: 0;
-	height: 100%;
-}
 div#outer {
-	height: 100%;
+	position: absolute;
+	top: 3%;
+	right: 3%;
+	left: 3%;
+	bottom: 3%;
 	background-color: #f00;
-	margin:0
-	padding:0;
-	width:100%;
 }
 div#inner {
 	position:absolute;
-	text-align: center;
-	width: 92%;
+	right: 0;
+	left: 0;
 	top:50%; 
-	margin:0
-	padding:0;
+	text-align: center;
 }
