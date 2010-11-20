@@ -9,9 +9,9 @@ function tick() {
 }
 
 function displayTime() {
-    var deciseconds = Math.floor(currentTime % 10);
-    var seconds = Math.floor(currentTime/10) % 60;
-    var minutes = (Math.floor(currentTime/(60*10))) % 60;
+    var deciseconds = currentTime % 10;
+    var seconds = (currentTime/10) % 60;
+    var minutes = (currentTime/(60*10)) % 60;
     $('#countdown').html(sprintf(
         '%02d:%02d.%d', minutes, seconds, deciseconds
     ));
