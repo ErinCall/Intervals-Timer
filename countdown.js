@@ -1,18 +1,19 @@
-var currentTime = 4;
+var currentTime = 40;
 function tick() {
 	if (currentTime == 0 ) {
 		intervalToggle();
-		currentTime = 2*60;
+		currentTime = 2*60*10;
 	} else {
 		currentTime--;
 	}
 }
 
 function displayTime() {
-	var seconds = (currentTime) % 60;
-	var minutes = (Math.floor(currentTime/(60))) % 60;
+	var deciseconds = Math.floor(currentTime % 10);
+	var seconds = Math.floor(currentTime/10) % 60;
+	var minutes = (Math.floor(currentTime/(60*10))) % 60;
 	$('#countdown').html(sprintf(
-		'%02d:%02d', minutes, seconds
+		'%02d:%02d.%d', minutes, seconds, deciseconds
 	));
 }
 
@@ -21,5 +22,5 @@ $(document).ready(function() {
 	window.setInterval(function() {
 		tick();
 		displayTime();
-	}, 1000)
+	}, 100)
 });
