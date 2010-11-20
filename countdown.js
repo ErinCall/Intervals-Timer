@@ -1,8 +1,19 @@
 var currentTime = 40;
+var timerIntervalId = 0;
+var script = [
+    200,
+    150
+];
+
 function tick() {
     if (currentTime == 0 ) {
-        intervalToggle();
-        currentTime = 2*60*10;
+        if (script.length > 0) {
+            intervalToggle();
+            currentTime = script.shift();
+        } else {
+            intervalCancel();
+            window.clearInterval(timerIntervalId)
+        }
     } else {
         currentTime--;
     }
@@ -19,7 +30,7 @@ function displayTime() {
 
 $(document).ready(function() {
     displayTime();
-    window.setInterval(function() {
+    timerIntervalId = window.setInterval(function() {
         tick();
         displayTime();
     }, 100)

@@ -12,3 +12,7 @@ function intervalToggle() {
         start = 1;
     }
 }
+
+function intervalCancel() {
+    setBodyColor('#f5f5dc')
+}
