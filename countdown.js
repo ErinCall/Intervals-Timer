@@ -1,15 +1,14 @@
-var currentTime = 40;
+var currentTime = 80;
 var timerIntervalId = 0;
 var script = [
-    200,
-    150
+    4, 1,
 ];
 
 function tick() {
     if (currentTime == 0 ) {
         if (script.length > 0) {
             intervalToggle();
-            currentTime = script.shift();
+            currentTime = 600 * script.shift();
         } else {
             intervalCancel();
             window.clearInterval(timerIntervalId)
