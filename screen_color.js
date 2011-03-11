@@ -4,8 +4,10 @@
     }
 
     var stateColors = {
-        on: '#ff0000',
-        off: '#0000ff',
+        max: '#ff0d00',
+        anaerobic: '#ff5300',
+        aerobic: '#ff7c00',
+        down: '#36bbce',
         neutral: '#f5f5dc',
     };
     window.intervalSetState = function(newState) {

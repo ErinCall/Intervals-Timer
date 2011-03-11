@@ -7,13 +7,21 @@
             duration: (0.05),
         },
         {
-            state: 'on',
-            duration: 4,
+            state: 'max',
+            duration: 0.3,
         },
         {
-            state: 'off',
-            duration: 1,
-        }
+            state: 'down',
+            duration: 0.3,
+        },
+        {
+            state: 'anaerobic',
+            duration: 0.3,
+        },
+        {
+            state: 'aerobic',
+            duration: 0.3,
+        },
     ];
 
     function tick() {
