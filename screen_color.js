@@ -1,6 +1,6 @@
 (function() {
     function setBodyColor(color) {
-        $('#countdown-outer').css('background-color', color);
+        $('#outer').css('background-color', color);
     }
 
     var stateColors = {
