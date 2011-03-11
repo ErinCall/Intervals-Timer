@@ -1,18 +1,20 @@
-function setBodyColor(color) {
-    $('#outer').css('background-color', color);
-}
-
-var start = 1;
-function intervalToggle() {
-    if ( start ) {
-        setBodyColor('#ff0000');
-        start = 0;
-    } else {
-        setBodyColor('#0000ff');
-        start = 1;
+(function() {
+    function setBodyColor(color) {
+        $('#countdown-outer').css('background-color', color);
     }
-}
 
-function intervalCancel() {
-    setBodyColor('#f5f5dc')
-}
+    var start = 1;
+    window.intervalToggle = function() {
+        if ( start ) {
+            setBodyColor('#ff0000');
+            start = 0;
+        } else {
+            setBodyColor('#0000ff');
+            start = 1;
+        }
+    }
+
+    window.intervalCancel = function() {
+        setBodyColor('#f5f5dc')
+    }
+})();

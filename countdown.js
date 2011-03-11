@@ -8,10 +8,10 @@
     function tick() {
         if (currentTime == 0 ) {
             if (script.length > 0) {
-                intervalToggle();
+                window.intervalToggle();
                 currentTime = 600 * script.shift();
             } else {
-                intervalCancel();
+                window.intervalCancel();
                 window.clearInterval(timerIntervalId)
             }
         } else {
