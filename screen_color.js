@@ -3,18 +3,19 @@
         $('#countdown-outer').css('background-color', color);
     }
 
-    var start = 1;
-    window.intervalToggle = function() {
-        if ( start ) {
-            setBodyColor('#ff0000');
-            start = 0;
-        } else {
-            setBodyColor('#0000ff');
-            start = 1;
+    var stateColors = {
+        on: '#ff0000',
+        off: '#0000ff',
+        neutral: '#f5f5dc',
+    };
+    window.intervalSetState = function(newState) {
+        if ( ! stateColors[newState] ) {
+            newState = 'neutral';
         }
+        setBodyColor(stateColors[newState]);
     }
 
     window.intervalCancel = function() {
-        setBodyColor('#f5f5dc')
+        intervalSetState('neutral')
     }
 })();

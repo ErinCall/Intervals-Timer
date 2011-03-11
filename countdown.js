@@ -1,15 +1,27 @@
 (function() {
-    var currentTime = 80;
+    var currentTime = 0;
     var timerIntervalId = 0;
     var script = [
-        4, 1,
+        {
+            state: 'neutral',
+            duration: (0.05),
+        },
+        {
+            state: 'on',
+            duration: 4,
+        },
+        {
+            state: 'off',
+            duration: 1,
+        }
     ];
 
     function tick() {
         if (currentTime == 0 ) {
             if (script.length > 0) {
-                window.intervalToggle();
-                currentTime = 600 * script.shift();
+                var newState = script.shift();
+                window.intervalSetState(newState.state);
+                currentTime = 600 * newState.duration;
             } else {
                 window.intervalCancel();
                 window.clearInterval(timerIntervalId)
