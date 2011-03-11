@@ -4,31 +4,41 @@
     var script = [
         {
             state: 'neutral',
-            duration: (0.05),
+            duration: 0.05,
+            label: 'Warmup',
         },
         {
             state: 'max',
             duration: 0.3,
+            label: 'MAX',
         },
         {
             state: 'down',
             duration: 0.3,
+            label: 'Quick recover',
         },
         {
             state: 'anaerobic',
             duration: 0.3,
+            label: 'Anaerobic',
         },
         {
-            state: 'aerobic',
-            duration: 0.3,
+            state: 'down',
+            duration: 1,
+            label: 'Recover',
         },
+        {
+            state: 'anaerobic',
+            duration: 2,
+            label: 'Anaerobic',
+        }
     ];
 
     function tick() {
         if (currentTime == 0 ) {
             if (script.length > 0) {
                 var newState = script.shift();
-                window.intervalSetState(newState.state);
+                window.intervalSetState(newState.state, newState.label);
                 currentTime = 600 * newState.duration;
             } else {
                 window.intervalCancel();

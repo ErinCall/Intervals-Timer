@@ -2,6 +2,10 @@
     function setBodyColor(color) {
         $('#outer').css('background-color', color);
     }
+    
+    function setDisplay(label) {
+        $('#interval-label').html(label);
+    }
 
     var stateColors = {
         max: '#ff0d00',
@@ -10,14 +14,15 @@
         down: '#36bbce',
         neutral: '#f5f5dc',
     };
-    window.intervalSetState = function(newState) {
+    window.intervalSetState = function(newState, label) {
         if ( ! stateColors[newState] ) {
             newState = 'neutral';
         }
         setBodyColor(stateColors[newState]);
+        setDisplay(label);
     }
 
     window.intervalCancel = function() {
-        intervalSetState('neutral')
+        intervalSetState('neutral', 'All Done!')
     }
 })();

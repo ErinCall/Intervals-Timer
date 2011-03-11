@@ -9,14 +9,20 @@ div#outer {
     bottom: 3%;
     background-color: #F5F5DC;
 }
-div#inner {
+div#countdown-container {
     position:absolute;
     right: 0;
     left: 0;
     top:50%; 
     height:10em;
-    margin-top:-5em;
+    margin-top:-13em;
     text-align: center;
+}
+div#interval-name-container {
+    margin-bottom:2em;
+}
+span#interval-label {
+    font-size: 6em;
 }
 span#countdown {
     font-size: 10em;
