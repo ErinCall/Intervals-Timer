@@ -9,7 +9,7 @@ div#outer {
     bottom: 3%;
     background-color: #F5F5DC;
 }
-div#countdown-container {
+div#countdown-container, #workout-container {
     position:absolute;
     right: 0;
     left: 0;
@@ -17,6 +17,13 @@ div#countdown-container {
     height:10em;
     margin-top:-13em;
     text-align: center;
+}
+#workout-container {
+    margin-top:-10em;
+}
+#workout-runner {
+    width: 14em;
+    font-size:3em;
 }
 div#interval-name-container {
     margin-bottom:2em;

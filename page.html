@@ -12,6 +12,14 @@
     </head>
     <body>
         <div id='outer'>
+			<div id='workout-container'>
+				<form method="get" action="#" onsubmit='window.runWorkout(); return false;'>
+					<div id='workout'>
+						<textarea name='workout-contents' id='workout-contents' rows='24' cols='80'></textarea><br />
+						<input type='submit' name='workout-runner' id='workout-runner' value='GO' />
+					</div>
+				</form>
+			</div>
             <div id='countdown-container'>
 				<div id='interval-name-container'>
 					<span id='interval-label'></span>

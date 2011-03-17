@@ -58,11 +58,12 @@
         ));
     }
 
-    $(document).ready(function() {
+    window.runWorkout = function() {
+        $('#workout-container').children().hide();
         displayTime();
         timerIntervalId = window.setInterval(function() {
             tick();
             displayTime();
         }, 100)
-    });
+    };
 })();
