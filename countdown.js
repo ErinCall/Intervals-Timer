@@ -1,7 +1,7 @@
 (function() {
     var currentTime = 0;
     var timerIntervalId = 0;
-    var script = [
+    var workout = [
         {
             state: 'neutral',
             duration: 0.05,
@@ -36,8 +36,8 @@
 
     function tick() {
         if (currentTime == 0 ) {
-            if (script.length > 0) {
-                var newState = script.shift();
+            if (workout.length > 0) {
+                var newState = workout.shift();
                 window.intervalSetState(newState.state, newState.label);
                 currentTime = 600 * newState.duration;
             } else {
