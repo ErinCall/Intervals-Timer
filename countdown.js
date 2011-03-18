@@ -1,38 +1,7 @@
 var Countdown = (function() {
     var currentTime = 0;
     var timerIntervalId = 0;
-    var workout = [
-        {
-            state: 'neutral',
-            duration: 0.05,
-            label: 'Warmup',
-        },
-        {
-            state: 'max',
-            duration: 0.3,
-            label: 'MAX',
-        },
-        {
-            state: 'down',
-            duration: 0.3,
-            label: 'Quick recover',
-        },
-        {
-            state: 'anaerobic',
-            duration: 0.3,
-            label: 'Anaerobic',
-        },
-        {
-            state: 'down',
-            duration: 1,
-            label: 'Recover',
-        },
-        {
-            state: 'anaerobic',
-            duration: 2,
-            label: 'Anaerobic',
-        }
-    ];
+    var workout = [];
 
     function tick() {
         if (currentTime == 0 ) {
@@ -60,6 +29,7 @@ var Countdown = (function() {
 
     return {
         runWorkout : function() {
+            workout = Parse.parseWorkout($('#workout-contents').val());
 
             $('#workout-container').children().hide();
             displayTime();
