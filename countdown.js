@@ -1,4 +1,4 @@
-(function() {
+var Countdown = (function() {
     var currentTime = 0;
     var timerIntervalId = 0;
     var workout = [
@@ -38,11 +38,11 @@
         if (currentTime == 0 ) {
             if (workout.length > 0) {
                 var newState = workout.shift();
-                window.intervalSetState(newState.state, newState.label);
+                ScreenColor.intervalSetState(newState.state, newState.label);
                 currentTime = 600 * newState.duration;
             } else {
-                window.intervalCancel();
-                window.clearInterval(timerIntervalId)
+                ScreenColor.intervalCancel();
+                ScreenColor.clearInterval(timerIntervalId)
             }
         } else {
             currentTime--;
@@ -58,12 +58,15 @@
         ));
     }
 
-    window.runWorkout = function() {
-        $('#workout-container').children().hide();
-        displayTime();
-        timerIntervalId = window.setInterval(function() {
-            tick();
+    return {
+        runWorkout : function() {
+
+            $('#workout-container').children().hide();
             displayTime();
-        }, 100)
+            timerIntervalId = window.setInterval(function() {
+                tick();
+                displayTime();
+            }, 100)
+        },
     };
 })();

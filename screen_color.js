@@ -1,4 +1,4 @@
-(function() {
+var ScreenColor = (function() {
     function setBodyColor(color) {
         $('#outer').css('background-color', color);
     }
@@ -14,15 +14,16 @@
         down: '#36bbce',
         neutral: '#f5f5dc',
     };
-    window.intervalSetState = function(newState, label) {
-        if ( ! stateColors[newState] ) {
-            newState = 'neutral';
+    return {
+        intervalSetState : function(newState, label) {
+            if ( ! stateColors[newState] ) {
+                newState = 'neutral';
+            }
+            setBodyColor(stateColors[newState]);
+            setDisplay(label);
+        },
+        intervalCancel : function() {
+            intervalSetState('neutral', 'All Done!')
         }
-        setBodyColor(stateColors[newState]);
-        setDisplay(label);
-    }
-
-    window.intervalCancel = function() {
-        intervalSetState('neutral', 'All Done!')
-    }
+    };
 })();
